@@ -10,6 +10,9 @@ spec:
       env: {{ .Values.environment }}
   template:
     metadata:
+      annotations:
+        checksum/configmap: {{ printf "environments/configmap.%s.yaml" .Values.namespace | .Files.Get | sha256sum }}
+        checksum/secrets: {{ printf "environments/secrets.%s.yaml" .Values.namespace | .Files.Get | sha256sum }}
       labels:
         app: helm-multi-env
         env: {{ .Values.environment }}
