@@ -1,0 +1,2 @@
+namespace: prod
+environment: production

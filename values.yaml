@@ -1,1 +1,3 @@
 # Please refer environment specific values in `environments` folder
+
+namespace: will_not_get_picked_up
